@@ -3,7 +3,7 @@ FROM php:7.3-apache
 RUN apt-get update \
  && apt-get install -y unzip git zlib1g-dev libzip-dev libicu-dev libpng-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev pkg-config libssl-dev libldap2-dev \
  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
- && docker-php-ext-install zip pdo_mysql intl gd \
+ && docker-php-ext-install zip pdo_mysql intl gd ldap \
  && pecl install xdebug \
  && docker-php-ext-enable xdebug \
  && pecl install mongodb \
